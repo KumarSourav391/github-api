@@ -3,11 +3,13 @@ import requests
 from dotenv import load_dotenv
 import os
 
+from flask_cors import CORS
+
 # Load environment variables
 load_dotenv()
 
 app = Flask(__name__)
-
+CORS(app)
 # Default route
 @app.route('/')
 def home():
