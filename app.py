@@ -31,7 +31,7 @@ def get_github_profile():
 # Get repo data
 @app.route('/github/<repo_name>', methods=['GET'])
 def get_repo(repo_name):
-    response = requests.get(f"{GITHUB_API_URL}/repos/YOUR_GITHUB_USERNAME/{repo_name}", headers=HEADERS)
+    response = requests.get(f"{GITHUB_API_URL}/repos/KumarSourav391/{repo_name}", headers=HEADERS)
     return jsonify(response.json())
 
 # Create an issue
@@ -42,7 +42,7 @@ def create_issue(repo_name):
         "title": data.get("title"),
         "body": data.get("body")
     }
-    response = requests.post(f"{GITHUB_API_URL}/repos/YOUR_GITHUB_USERNAME/{repo_name}/issues",
+    response = requests.post(f"{GITHUB_API_URL}/repos/KumarSourav391/{repo_name}/issues",
                              headers=HEADERS, json=issue_data)
     return jsonify(response.json())
 
